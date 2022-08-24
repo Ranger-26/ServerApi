@@ -18,6 +18,7 @@ namespace ServerApiClient_Example.ClientCode
                 www.SetRequestHeader(Constants.MaxPlayers, maxPlayers.ToString());
                 www.SetRequestHeader(Constants.CurrentNumberOfPlayers, currentNumPlayers.ToString());
                 www.SetRequestHeader(Constants.IsPrivate, isPrivate.ToString());
+                www.downloadHandler = new DownloadHandlerBuffer();
                 yield return www.SendWebRequest();
                 Debug.Log($"{www.downloadHandler.text}");
             }

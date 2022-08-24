@@ -12,6 +12,7 @@ namespace ServerApi.Core
         [RestRoute("Post", "/serverApi/addServer")]
         public async Task AddServer(IHttpContext ctx)
         {
+            Console.WriteLine($"Received request to add server from {ctx.Request.RemoteEndPoint.Address}.", ConsoleColor.Green);
             var reqInfo = ctx.CreateRequestInfo();
             if (Program.Instance.Database.AddServer(reqInfo, out string identifier))
             {

@@ -22,7 +22,7 @@ namespace ServerApi
             {
                 server.Start();
 
-                Console.WriteLine("Press enter to stop the server");
+                Console.WriteLine("Press enter to stop the server", ConsoleColor.Blue);
                 Console.ReadLine();
             }
         }
