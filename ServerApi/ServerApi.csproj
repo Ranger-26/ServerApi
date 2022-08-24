@@ -185,8 +185,8 @@
         <Compile Include="Core\Endpoint.cs" />
         <Compile Include="Core\Extensions\HttpContextExtensions.cs" />
         <Compile Include="Database\Database.cs" />
-        <Compile Include="Database\Models\RequestInfo.cs" />
-        <Compile Include="Database\Models\ServerInfo.cs" />
+        <Compile Include="Models\RequestInfo.cs" />
+        <Compile Include="Models\ServerInfo.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
