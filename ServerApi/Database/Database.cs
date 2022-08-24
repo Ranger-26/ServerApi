@@ -18,17 +18,19 @@ namespace ServerApi.Database
             _random = new Random();
         }
 
-        public bool AddServer(RequestInfo info)
+        public bool AddServer(RequestInfo info, out string identifier)
         {
             foreach (var server in Servers)
             {
                 if (server.Value.ServerIp == info.ServerIp)
                 {
+                    identifier = "";
                     return false;
                 }
             }
 
             string code = _random.Next(1000, 10000).ToString();
+
             Servers.Add(code, new ServerInfo()
             {
                 ServerName = info.ServerName,
@@ -38,6 +40,7 @@ namespace ServerApi.Database
                 CurrentNumPlayers = info.CurrentNumPlayers,
                 IsPrivate = info.IsPrivate
             });
+            identifier = code;
             return true;
         }
 
