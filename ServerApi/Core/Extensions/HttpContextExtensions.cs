@@ -31,16 +31,16 @@ namespace ServerApi.Core.Extensions
             var headers = ctx.Request.Headers;
             var serverName = headers[Constants.ServerIdentifier];
             var serverIp = headers[Constants.ServerIp];
-            uint maxPlayers = (uint)Int32.Parse(headers[Constants.MaxPlayers]);
-            var currentNumberOfPlayers = (uint)Int32.Parse(headers[Constants.CurrentNumberOfPlayers]);
-            var isPrivate = headers[Constants.IsPrivate];
+            uint maxPlayers = headers[Constants.MaxPlayers].ToUint();
+            var currentNumberOfPlayers = headers[Constants.CurrentNumberOfPlayers].ToUint();
+            var isPrivate = headers[Constants.IsPrivate].ToBool();
             return new RequestInfo()
             {
                 ServerName = serverName,
                 ServerIp = serverIp,
                 MaxPlayers = maxPlayers,
                 CurrentNumPlayers = currentNumberOfPlayers,
-                IsPrivate = isPrivate == Constants.True
+                IsPrivate = isPrivate 
             };
         }
     }
