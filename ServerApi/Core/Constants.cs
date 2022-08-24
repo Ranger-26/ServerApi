@@ -1,4 +1,4 @@
-﻿namespace ServerApi
+﻿namespace ServerApi.Core
 {
     public static class Constants
     {

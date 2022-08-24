@@ -181,7 +181,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Constants.cs" />
+        <Compile Include="Core\Constants.cs" />
         <Compile Include="Core\Endpoint.cs" />
         <Compile Include="Core\Extensions\HttpContextExtensions.cs" />
         <Compile Include="Database\Database.cs" />
